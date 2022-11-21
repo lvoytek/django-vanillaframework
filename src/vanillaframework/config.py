@@ -16,3 +16,11 @@ def get_min_css_url():
     """
     return getattr(settings, "VANILLAFRAMEWORK_MIN_CSS_URL",
                    f"https://assets.ubuntu.com/v1/vanilla-framework-version-{get_version()}.min.css")
+
+
+def get_local_css_path():
+    """
+    Get the static file path of the local copy of Vanilla Framework.
+    """
+    return getattr(settings, "VANILLAFRAMEWORK_PATH",
+                   "css/vanilla-framework-version-{get_version()}.min.css")
