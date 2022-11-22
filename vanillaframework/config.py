@@ -23,5 +23,10 @@ def get_min_css_url():
 
 def get_local_css_path():
     """Get the static file path of the local copy of Vanilla Framework."""
-    return getattr(settings, "VANILLAFRAMEWORK_PATH",
+    return getattr(settings, "VANILLAFRAMEWORK_CSS_PATH",
                    "css/vanilla-framework-version-{get_version()}.min.css")
+
+
+def get_local_sass_path():
+    """Get the static file path of the custom sass file that includes Vanilla Framework."""
+    return getattr(settings, "VANILLAFRAMEWORK_PATH", "vanillaframework.sass")
