@@ -5,7 +5,6 @@ setup(
     name='django-vanillaframework',
     version='0.1.0',
     packages=["vanillaframework"],
-    package_dir="src",
     url='https://github.com/lvoytek/django-vanillaframework',
     license='LGPL v3',
     author='Lena Voytek',
