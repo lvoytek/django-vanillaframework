@@ -1,3 +1,5 @@
+"""Django template tag manager for Vanilla Framework."""
+
 from django import template
 from ..config import get_min_css_url, get_local_css_path
 from ..util import has_local_css
