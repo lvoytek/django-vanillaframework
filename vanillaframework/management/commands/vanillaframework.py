@@ -1,0 +1,1 @@
+"""Vanilla Framework management command."""
