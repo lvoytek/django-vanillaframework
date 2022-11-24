@@ -1,9 +1,10 @@
 """Setup.py file."""
 from setuptools import setup
+from vanillaframework import __version__
 
 setup(
     name='django-vanillaframework',
-    version='0.1.0',
+    version=__version__,
     packages=["vanillaframework"],
     url='https://github.com/lvoytek/django-vanillaframework',
     license='LGPL v3',
