@@ -30,7 +30,8 @@ class Command(BaseCommand):
 
     def handle_install(self, *args, **options):
         """Handle Vanilla Framework install command."""
-        version_to_get = options["use_version"] if "use_version" in options and options["use_version"] is not None else config.get_version()
+        version_to_get = options["use_version"] if "use_version" in options and options[
+            "use_version"] is not None else config.get_version()
 
         if "static_folder" not in options:
             print("Error: no static folder provided. Use --static-folder or add a STATIC_ROOT to settings.")
@@ -43,10 +44,12 @@ class Command(BaseCommand):
                                                                                                 version_to_get)))
         else:
             Path(options["static_folder"]).mkdir(parents=True, exist_ok=True)
-            npm_result = subprocess.run(["npm", "install", "--prefix", options['static_folder'], f"vanilla-framework@{version_to_get}"])
+            npm_result = subprocess.run(
+                ["npm", "install", "--prefix", options['static_folder'], f"vanilla-framework@{version_to_get}"])
 
             if npm_result.returncode != 0:
-                print("Error: npm failed to download vanilla-framework. Make sure you have npm installed and in your PATH (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)")
+                print("Error: npm failed to download vanilla-framework. Make sure you have npm installed and in your")
+                print("PATH (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)")
                 return
 
             vanilla_filename = os.path.join(options["static_folder"], config.get_local_sass_path())
@@ -57,8 +60,8 @@ class Command(BaseCommand):
                 vanilla_file = open(vanilla_filename, "w")
                 vanilla_file.write(
                     """// Override default Vanilla settings here,
-                    
-                    
+
+
                     // Import the framework
                     @import 'node_modules/vanilla-framework';
 
