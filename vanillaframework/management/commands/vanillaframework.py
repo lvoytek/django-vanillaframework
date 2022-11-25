@@ -41,7 +41,12 @@ class Command(BaseCommand):
             urllib.request.urlretrieve(config.get_min_css_url(version_to_get), os.path.join(options["static_folder"],
                                                                                             config.get_local_css_path(
                                                                                                 version_to_get)))
-            
+
+        if "use_version" in options:
+            print("You have downloaded a specific version of Vanilla Framework. To use it, add:")
+            print(f"VANILLAFRAMEWORK_VERSION = {version_to_get}")
+            print("to your settings file.")
+
     def get_version(self):
-        """Get the django-vanillaframework version"""
+        """Get the django-vanillaframework version."""
         return __version__
