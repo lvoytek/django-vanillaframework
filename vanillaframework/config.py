@@ -11,20 +11,20 @@ def get_version():
     return getattr(settings, "VANILLAFRAMEWORK_VERSION", "3.8.1")
 
 
-def get_min_css_url():
+def get_min_css_url(ver=None):
     """
     Get the min.css CDN URL for the provided version of Vanilla Framework.
 
-    If a custom URL is provided, use that instead.
+    If a custom URL or version is provided, use that instead.
     """
     return getattr(settings, "VANILLAFRAMEWORK_MIN_CSS_URL",
-                   f"https://assets.ubuntu.com/v1/vanilla-framework-version-{get_version()}.min.css")
+                   f"https://assets.ubuntu.com/v1/vanilla-framework-version-{ver if ver else get_version()}.min.css")
 
 
-def get_local_css_path():
+def get_local_css_path(ver=None):
     """Get the static file path of the local copy of Vanilla Framework."""
     return getattr(settings, "VANILLAFRAMEWORK_CSS_PATH",
-                   "css/vanilla-framework-version-{get_version()}.min.css")
+                   f"css/vanilla-framework-version-{ver if ver else get_version()}.min.css")
 
 
 def get_local_sass_path():
