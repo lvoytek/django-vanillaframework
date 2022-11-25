@@ -15,7 +15,8 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
-    'vanillaframework'
+    'vanillaframework',
+    'compressor'
 ]
 
 MIDDLEWARE = [

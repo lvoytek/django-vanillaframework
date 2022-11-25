@@ -63,7 +63,7 @@ class Command(BaseCommand):
 
 
                     // Import the framework
-                    @import 'node_modules/vanilla-framework';
+                    @import 'node_modules/vanilla-framework/scss/build.scss';
 
                     // Include Vanilla Framework
                     @include vanilla;
