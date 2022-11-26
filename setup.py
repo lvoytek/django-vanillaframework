@@ -1,5 +1,6 @@
 """Setup.py file."""
 from setuptools import setup, find_packages
+from pathlib import Path
 from vanillaframework import __version__
 
 setup(
@@ -11,6 +12,8 @@ setup(
     author='Lena Voytek',
     author_email='lena@voytek.dev',
     description='Vanilla Framework frontend for Django',
+    long_description=Path(Path(__file__).parent / "README.md").read_text(),
+    long_description_content_type='text/markdown',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
