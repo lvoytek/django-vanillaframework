@@ -7,6 +7,7 @@ setup(
     name='django-vanillaframework',
     version=__version__,
     packages=find_packages(exclude=['tests']),
+    include_package_data=True,
     url='https://github.com/lvoytek/django-vanillaframework',
     license='LGPL v3',
     author='Lena Voytek',
