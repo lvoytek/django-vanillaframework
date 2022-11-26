@@ -1,12 +1,18 @@
 """Utility functions for handling Vanilla Framework in Django."""
-import os.path
-from pathlib import Path
-from django.conf import settings
-from .config import get_local_css_path
+from urllib import request
+from urllib.error import HTTPError
+import json
 
 
-def has_local_css():
-    """Check if there is a local copy of Vanilla Framework in the correct location and return True if so."""
-    css = os.path.join(settings.STATIC_ROOT, get_local_css_path()) if hasattr(settings,
-                                                                              "STATIC_ROOT") else get_local_css_path()
-    return Path(css).is_file()
+def get_latest_release_version():
+    """Check Vanilla Framework's GitHub repo for the latest release tag."""
+    try:
+        with request.urlopen("https://api.github.com/repos/canonical/vanilla-framework/tags") as url_data:
+            json_output = json.loads(url_data.read().decode())
+            for tag in json_output:
+                if "name" in tag and tag["name"][0] == "v":
+                    return tag["name"][1::]
+    except HTTPError:
+        pass
+
+    return None

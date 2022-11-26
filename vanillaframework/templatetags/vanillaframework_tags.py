@@ -1,8 +1,7 @@
 """Django template tag manager for Vanilla Framework."""
 
 from django import template
-from ..config import get_min_css_url, get_local_css_path, get_local_sass_path
-from ..util import has_local_css
+from ..config import get_min_css_url, get_local_css_path, get_local_sass_path, has_local_css
 
 register = template.Library()
 
