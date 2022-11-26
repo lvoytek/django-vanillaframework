@@ -29,4 +29,4 @@ def get_local_css_path(ver=None):
 
 def get_local_sass_path():
     """Get the static file path of the custom sass file that includes Vanilla Framework."""
-    return getattr(settings, "VANILLAFRAMEWORK_PATH", "vanillaframework.sass")
+    return getattr(settings, "VANILLAFRAMEWORK_PATH", "vanillaframework.scss")
